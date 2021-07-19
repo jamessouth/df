@@ -1,0 +1,9 @@
+type = internal/date
+
+interval = 1
+
+format-foreground = ${colors.glaucous}
+label = %date% %time% 
+date = %%{T3}%m-%d
+time = %%{T3}%T
+

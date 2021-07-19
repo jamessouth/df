@@ -1,0 +1,9 @@
+type = custom/script
+
+exec = ~/.config/polybar/udscript.sh
+interval = 21600
+format = <label>
+format-foreground = ${colors.ming}
+label = %{T2}%output%
+
+

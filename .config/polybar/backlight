@@ -1,0 +1,9 @@
+type = internal/backlight
+
+card = intel_backlight
+label = %{T2}%percentage%%
+format-foreground = ${colors.glaucous}
+;format-prefix-foreground = ${colors.steel}
+format-font = 2
+format-prefix = "bl "
+

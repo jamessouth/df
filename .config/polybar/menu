@@ -1,0 +1,25 @@
+type = custom/menu
+
+expand-right = false
+format-spacing = 1
+
+label-open = +
+label-open-foreground = ${colors.tumble}
+label-open-font = 3
+label-close = X 
+label-close-foreground = ${colors.paradise}
+label-close-font = 2
+label-separator = |
+label-separator-foreground = ${colors.dark-olive-green}
+label-separator-font = 3
+
+menu-0-0 = reboot
+menu-0-0-font = 3
+menu-0-0-foreground = ${colors.ming}
+menu-0-0-exec = reboot
+
+menu-0-1 = shutdown
+menu-0-1-font = 3
+menu-0-1-foreground = ${colors.ming}
+menu-0-1-exec = shutdown now
+

@@ -1,0 +1,21 @@
+type = internal/battery
+
+full-at = 100
+battery = BAT0
+adapter = AC
+
+poll-interval = 7
+time-format = %R
+
+label-charging = %{T2}%percentage%
+format-charging-foreground = ${colors.glaucous}
+format-charging-background = ${colors.linen}
+
+label-discharging = %{T3}%time%
+format-discharging-foreground = ${colors.paradise}
+format-discharging-background = ${colors.tumble}
+
+label-full = %{T2}%percentage%
+format-full-foreground = ${colors.linen}
+format-full-background = ${colors.ming}
+

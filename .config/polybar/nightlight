@@ -1,0 +1,12 @@
+type = custom/script
+
+exec = xrandr --verbose | grep Gamma | cut -d' ' -f7-
+interval = 20
+format = <label>
+format-prefix = "nl "
+format-font = 2
+format-foreground = ${colors.steel}
+;format-prefix-foreground = ${colors.steel}
+label = %{T2}%output%
+
+

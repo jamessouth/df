@@ -1,0 +1,11 @@
+type = internal/cpu
+
+interval = 4
+format-foreground = ${colors.steel}
+;format-prefix-foreground = ${colors.steel}
+label = %{T2}%percentage-cores%
+format-font = 2
+format-prefix = "cpu "
+
+
+

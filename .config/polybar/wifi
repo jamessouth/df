@@ -1,0 +1,16 @@
+type = internal/network
+
+interface = wlp6s0
+interval = 3
+
+label-connected = "wifi"
+format-connected-font = 2
+format-connected-foreground = ${colors.bud-green}
+
+label-disconnected = "no wifi" 
+format-disconnected-font = 2
+format-disconnected-foreground = ${colors.paradise}
+
+
+
+

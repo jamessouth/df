@@ -1,0 +1,108 @@
+[colors]
+include-file = /home/baldric/.config/polybar/colors
+
+[bar/mybar]
+include-file = /home/baldric/.config/polybar/mybar
+
+[module/bspwm]
+include-file = /home/baldric/.config/polybar/bspwm
+
+[module/filesystem]
+include-file = /home/baldric/.config/polybar/filesystem
+
+[module/memory]
+include-file = /home/baldric/.config/polybar/memory
+
+[module/cpu]
+include-file = /home/baldric/.config/polybar/cpu
+
+[module/temperature]
+include-file = /home/baldric/.config/polybar/temperature
+
+[module/wifi]
+include-file = /home/baldric/.config/polybar/wifi
+
+[module/backlight]
+include-file = /home/baldric/.config/polybar/backlight
+
+[module/nightlight]
+include-file = /home/baldric/.config/polybar/nightlight
+
+[module/updates]
+include-file = /home/baldric/.config/polybar/updates
+
+[module/menu]
+include-file = /home/baldric/.config/polybar/menu
+
+[module/battery]
+include-file = /home/baldric/.config/polybar/battery
+
+[module/date]
+include-file = /home/baldric/.config/polybar/date
+
+[global/wm]
+
+[settings]
+screenchange-reload = false
+
+
+;[module/pulseaudio]
+;type = internal/pulseaudio
+
+;format-volume = <label-volume> <bar-volume>
+;label-volume = VOL %percentage%%
+;label-volume-foreground = ${root.foreground}
+
+;label-muted = 🔇 muted
+;label-muted-foreground = #666
+
+;bar-volume-width = 10
+;bar-volume-foreground-0 = #55aa55
+;bar-volume-foreground-1 = #55aa55
+;bar-volume-foreground-2 = #55aa55
+;bar-volume-foreground-3 = #55aa55
+;bar-volume-foreground-4 = #55aa55
+;bar-volume-foreground-5 = #f5a70a
+;bar-volume-foreground-6 = #ff5555
+;bar-volume-gradient = false
+;bar-volume-indicator = |
+;bar-volume-indicator-font = 2
+;bar-volume-fill = ─
+;bar-volume-fill-font = 2
+;bar-volume-empty = ─
+;bar-volume-empty-font = 2
+;bar-volume-empty-foreground = ${colors.white}
+
+;[module/alsa]
+;type = internal/alsa
+
+;format-volume = <label-volume> <bar-volume>
+;label-volume = VOL
+;label-volume-foreground = ${root.foreground}
+
+;format-muted-prefix = " "
+;format-muted-foreground = ${colors.white}
+;label-muted = sound muted
+
+;bar-volume-width = 10
+;bar-volume-foreground-0 = #55aa55
+;bar-volume-foreground-1 = #55aa55
+;bar-volume-foreground-2 = #55aa55
+;bar-volume-foreground-3 = #55aa55
+;bar-volume-foreground-4 = #55aa55
+;bar-volume-foreground-5 = #f5a70a
+;bar-volume-foreground-6 = #ff5555
+;bar-volume-gradient = false
+;bar-volume-indicator = |
+;bar-volume-indicator-font = 2
+;bar-volume-fill = ─
+;bar-volume-fill-font = 2
+;bar-volume-empty = ─
+;bar-volume-empty-font = 2
+;bar-volume-empty-foreground = ${colors.white}
+
+
+
+
+
+; vim:ft=dosini

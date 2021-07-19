@@ -1,0 +1,29 @@
+* {
+    bg: transparent;
+    fg: #a6a9ad;
+    selected-bg: #10101079;
+    selected-fg: #ededed;
+    text-color: @fg;
+    background-color: @bg;
+    font: "Gruppo 15";
+}
+#window {
+    transparency: "/home/baldric/Pictures/arch.png";
+    height: 404px;
+    width: 718px;
+}
+#inputbar {
+    children: [ entry ];
+}
+#entry {
+    font: "Michroma 12";
+    padding: -6px 0px 0px;
+}
+#element.normal.normal, element.alternate.normal {
+    background-color: @bg;
+    text-color: @fg;
+}
+#element.selected.normal {
+    background-color: @selected-bg;
+    text-color: @selected-fg;
+}
