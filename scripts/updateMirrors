@@ -1,0 +1,4 @@
+sudo pacman -Syy
+sudo reflector --latest 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+cat /etc/pacman.d/mirrorlist
+echo "mirrors updated!"

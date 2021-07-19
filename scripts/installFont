@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+dirName=$(basename $1 .zip | tr -d _) 
+
+echo "dirName will be: ${dirName}"
+
+dir="/usr/share/fonts/google/${dirName}"
+
+echo "creating directory: ${dir}"
+
+sudo mkdir -p "${dir}"
+
+sudo unzip -d "${dir}" $1
+
+sudo fc-cache -fv 
+
+newFont=$(fc-match "${dirName}")
+
+if [ -z "$newFont" ]; then
+  echo "Font not installed"
+else
+  echo "${newFont}"
+  echo "Font installed!"
+fi
+
+
