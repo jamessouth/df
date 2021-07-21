@@ -4,8 +4,8 @@ interval = 3
 thermal-zone = 0
 warn-temperature = 60
 
-label = %{T2}%temperature-f%
+label = %{T1}%temperature-f%
 label-foreground = ${colors.glaucous}
-label-warn = %{T2}%temperature-f%
+label-warn = %{T1}%temperature-f%
 label-warn-foreground = ${colors.paradise}
 

@@ -66,11 +66,11 @@ screenchange-reload = false
 ;bar-volume-foreground-6 = #ff5555
 ;bar-volume-gradient = false
 ;bar-volume-indicator = |
-;bar-volume-indicator-font = 2
+;bar-volume-indicator-font = 1
 ;bar-volume-fill = ─
-;bar-volume-fill-font = 2
+;bar-volume-fill-font = 1
 ;bar-volume-empty = ─
-;bar-volume-empty-font = 2
+;bar-volume-empty-font = 1
 ;bar-volume-empty-foreground = ${colors.white}
 
 ;[module/alsa]
@@ -94,11 +94,11 @@ screenchange-reload = false
 ;bar-volume-foreground-6 = #ff5555
 ;bar-volume-gradient = false
 ;bar-volume-indicator = |
-;bar-volume-indicator-font = 2
+;bar-volume-indicator-font = 1
 ;bar-volume-fill = ─
-;bar-volume-fill-font = 2
+;bar-volume-fill-font = 1
 ;bar-volume-empty = ─
-;bar-volume-empty-font = 2
+;bar-volume-empty-font = 1
 ;bar-volume-empty-foreground = ${colors.white}
 
 

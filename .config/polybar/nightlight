@@ -1,12 +1,15 @@
-type = custom/script
+type = custom/ipc
 
-exec = xrandr --verbose | grep Gamma | cut -d' ' -f7-
-interval = 20
-format = <label>
+hook-0 = bash ~/.config/polybar/nlscript.sh ~/.config/polybar/nlindex ~/.config/polybar/nldata + eDP-1
+
+hook-1 = bash ~/.config/polybar/nlscript.sh ~/.config/polybar/nlindex ~/.config/polybar/nldata - eDP-1
+
 format-prefix = "nl "
-format-font = 2
+format-font = 1
 format-foreground = ${colors.steel}
-;format-prefix-foreground = ${colors.steel}
-label = %{T2}%output%
+;format = %{T1}output
 
+initial = 1
+click-left = polybar-msg -p %pid% hook nightlight 1
+click-right = polybar-msg -p %pid% hook nightlight 2
 

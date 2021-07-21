@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
-current_index=$(cat ~/.config/polybar/nlindex)
+indexFile="$1"
 
-len=$(wc -l ~/.config/polybar/nldata | cut -d' ' -f1)
+dataFile="$2"
 
-case "$1" in
+current_index=$(cat "$indexFile")
+
+len=$(wc -l "$dataFile" | cut -d' ' -f1)
+
+case "$3" in
 	"+" )   new=$((current_index + 1))
 		new_index=$((new > len ? len : new));;
 
@@ -12,9 +16,11 @@ case "$1" in
 		new_index=$((new < 1 ? 1 : new));;
 esac
 
-gamma=$(awk "NR == ${new_index}" ~/.config/polybar/nldata)
+gamma=$(awk "NR == ${new_index}" "$dataFile")
 
-xrandr --output eDP-1 --gamma ${gamma}
+xrandr --output "$4" --gamma ${gamma}
+#xrandr --output "$5" --gamma ${gamma}
+#xrandr --output "$6" --gamma ${gamma}
 
-echo ${new_index} > ~/.config/polybar/nlindex
-
+echo ${new_index} > "$indexFile"
+echo ${gamma}

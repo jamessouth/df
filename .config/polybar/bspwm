@@ -11,15 +11,15 @@ ws-icon-7 = VIII; VIII
 ws-icon-8 = IX; IX
 ws-icon-9 = X; X
 
-label-focused = %{T1}%icon%
+label-focused = %{T2}%icon%
 label-focused-foreground = ${colors.linen}
 
-label-occupied = %{T1}%icon%
+label-occupied = %{T2}%icon%
 label-occupied-foreground = ${colors.bud-green}
 
-label-empty = %{T1}%icon%
+label-empty = %{T2}%icon%
 label-empty-foreground = ${colors.ming}
 
-label-urgent = %{T1}%icon%
+label-urgent = %{T2}%icon%
 label-urgent-foreground = ${colors.paradise}
 

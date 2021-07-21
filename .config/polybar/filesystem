@@ -2,8 +2,7 @@ type = internal/fs
 
 mount-0 = /
 interval = 3600
-label-mounted = %{T2}%percentage_free%%
+label-mounted = %{T1}%percentage_free%%
 format-mounted-foreground = ${colors.bud-green}
-format-mounted-font = 2
+format-mounted-font = 1
 format-mounted-prefix = "/ "
-;format-mounted-prefix-foreground = ${colors.steel}

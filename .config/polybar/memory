@@ -2,9 +2,8 @@ type = internal/memory
 
 interval = 8
 format-prefix = "mem "
-format-font = 2
-;format-prefix-foreground = ${colors.steel}
+format-font = 1
 format-foreground = ${colors.dark-olive-green}
-label = %{T2}%percentage_used%%
+label = %{T1}%percentage_used%%
 
 

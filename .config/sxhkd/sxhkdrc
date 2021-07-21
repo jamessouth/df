@@ -1,13 +1,3 @@
-
-# more red
-super + shift + r
-	$HOME/.config/polybar/nlscript.sh +
-
-# less red
-super + r
-	$HOME/.config/polybar/nlscript.sh -
-
-
 # brightness up
 XF86MonBrightnessUp
 	brightnessctl s +9
