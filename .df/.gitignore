@@ -1,0 +1,7 @@
+.gnupg/
+.ssh/id_*
+.ssh/*.pub
+.mozilla/
+*.pem
+.netrc
+

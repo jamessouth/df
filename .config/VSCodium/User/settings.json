@@ -1,0 +1,175 @@
+{
+    "aws.codeWhisperer.shareCodeWhispererContentWithAWS": false,
+    "aws.telemetry": false,
+    "biome.requireConfiguration": true,
+    "biome.suggestInstallingGlobally": false,
+    "breadcrumbs.enabled": false,
+    "calva.fmt.configPath": "CLOJURE-LSP",
+    "commentAnchors.scrollPosition": "center",
+    "commentAnchors.parseDelay": 1500,
+    "commentAnchors.workspace.matchFiles": "**/*.java",
+    "commentAnchors.tags.displayInSidebar": false,
+    "commentAnchors.tags.displayLineNumber": false,
+    "cSpell.enabledFileTypes": {
+        "csharp": false,
+        "go": false,
+        "javascript": false,
+        "javascriptreact": false,
+        "markdown": true,
+        "php": false,
+        "plaintext": false,
+        "typescript": false,
+        "typescriptreact": false,
+        "yaml": false,
+        "sql": false,
+    },
+    "cSpell.ignorePaths": [
+        "package-lock.json",
+        "node_modules",
+        "vscode-extension",
+        ".git/{info,lfs,logs,refs,objects}/**",
+        ".git/{index,*refs,*HEAD}",
+        ".vscode",
+        ".vscode-insiders",
+        "go.mod",
+        "go.sum",
+        "*.env",
+        "*.gitignore"
+    ],
+    "cSpell.userWords": [
+        "coreutils",
+        "distros",
+        "dsouth",
+        "polybar",
+        "shellcheck",
+        "srcset"
+    ],
+    "css.lint.unknownAtRules": "ignore",
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.accessibilitySupport": "off",
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "never",
+        "source.organizeImports.biome": "explicit"
+    },
+    "editor.codeLensFontFamily": "FiraCode Nerd Font Mono",
+    "editor.cursorBlinking": "phase",
+    "editor.cursorStyle": "line",
+    "editor.detectIndentation": false,
+    "editor.fontFamily": "FiraCode Nerd Font Mono",
+    "editor.fontLigatures": true,
+    "editor.formatOnSave": true,
+    "editor.indentSize": "tabSize",
+    "editor.minimap.enabled": false,
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "all",
+    "editor.snippetSuggestions": "top",
+    "editor.suggest.preview": true,
+    "editor.suggest.showMethods": true,
+    "editor.wordWrap": "on",
+    "emmet.includeLanguages": {
+        "rescript": "javascriptreact"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "*.res": "${capture}.res.mjs, ${capture}.js, ${capture}.cmi, ${capture}.cmt, ${capture}.cmj",
+        "*.resi": "${capture}.res"
+    },
+    "files.simpleDialog.enable": true,
+    "git.openRepositoryInParentFolders": "never",
+    "go.diagnostic.vulncheck": "Off",
+    "gopls": {
+        "ui.semanticTokens": true
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "json.schemas": [],
+    "markdown.preview.scrollEditorWithPreview": false,
+    "markdown.preview.scrollPreviewWithEditor": false,
+    "prettier.singleQuote": true,
+    "redhat.telemetry.enabled": false,
+    "rescript.settings.autoRunCodeAnalysis": true,
+    "rescript.settings.inlayHints.maxLength": 60,
+    "rescript.settings.askToStartBuild": false,
+    "rescript.settings.codeLens": true,
+    "search.useReplacePreview": false,
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "/usr/bin/bash",
+            "args": [
+                "-l",
+                "-i"
+            ],
+            "icon": "terminal-bash"
+        }
+    },
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "update.mode": "none",
+    "window.zoomLevel": -1,
+    "workbench.colorTheme": "Better Selenized Dark",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.wrapTabs": true,
+    "workbench.enableExperiments": false,
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "workbench.sideBar.location": "left",
+    "workbench.startupEditor": "none",
+    "[css]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[vue]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "workbench.layoutControl.type": "menu",
+    "window.customTitleBarVisibility": "never",
+    "window.titleBarStyle": "native",
+    "terminal.integrated.stickyScroll.enabled": false,
+    "terminal.integrated.initialHint": false,
+    "json.schemaDownload.trustedDomains": {
+        "https://schemastore.azurewebsites.net/": true,
+        "https://raw.githubusercontent.com/": true,
+        "https://www.schemastore.org/": true,
+        "https://json.schemastore.org/": true,
+        "https://json-schema.org/": true,
+        "https://biomejs.dev": true
+    },
+    "workbench.editor.tabSizing": "shrink",
+    "workbench.editor.tabSizingFixedMinWidth": 140,
+    "workbench.editor.tabSizingFixedMaxWidth": 140,
+    "window.menuBarVisibility": "toggle",
+    "files.watcherExclude": {
+        "**/_build/**": true,
+        "**/_opam/**": true,
+        "**/node_modules/**": true
+    },
+    "search.exclude": {
+        "**/_build/**": true,
+        "**/_opam/**": true
+    },
+    "workbench.colorCustomizations": {
+        "editor.wordHighlightBackground": "#ff000055"
+    },
+    "network.meteredConnection": "off"
+}
