@@ -1,0 +1,14 @@
+[module/pulseaudio]
+type = internal/pulseaudio
+
+label-volume = %{T2}%percentage%
+format-volume-foreground = ${colors.green}
+format-volume-prefix-foreground = ${colors.green}
+format-volume-font = 1
+format-volume-prefix = "vol "
+
+label-muted = %{T2}%percentage%
+format-muted-foreground = ${colors.red}
+format-muted-font = 1
+format-muted-prefix = "vol "
+

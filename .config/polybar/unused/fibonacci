@@ -1,0 +1,9 @@
+[module/fibonacci]
+type = custom/script
+;exec = bash ~/.config/polybar/fibonacci.sh 135
+exec = ~/.config/polybar/scripts/fibonacci.exe one semi-fibonacci -g 6 \\#ffffff \\#ff0000 \\#00ff00 \\#0000ff
+
+interval = 20
+format = <label>
+;format-foreground = ${colors.blue}
+label = %{T1}%output%

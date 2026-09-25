@@ -1,0 +1,15 @@
+[module/nightlight]
+type = custom/ipc
+
+format-foreground = ${colors.blue}
+format-prefix-foreground = ${colors.blue}
+format-font = 1
+label-font = 4
+format-prefix = "nl "
+
+hook-0 = bash ~/.config/polybar/scripts/nightlight -
+hook-1 = bash ~/.config/polybar/scripts/nightlight +
+initial = 1
+scroll-up = "#nightlight.hook.0"
+scroll-down = "#nightlight.hook.1"
+

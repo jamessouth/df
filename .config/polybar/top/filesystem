@@ -1,0 +1,11 @@
+[module/filesystem]
+type = internal/fs
+
+mount-0 = /
+interval = 100000
+
+label-mounted = %{T2}%percentage_free%
+format-mounted-foreground = ${colors.yellow}
+format-mounted-prefix-foreground = ${colors.yellow}
+format-mounted-font = 1
+format-mounted-prefix = "hd "

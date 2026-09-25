@@ -1,3 +1,15 @@
+# volume up
+XF86AudioRaiseVolume
+	wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 1%+
+
+# volume down
+XF86AudioLowerVolume	
+	wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-
+
+# mute
+XF86AudioMute
+	wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
 # brightness up
 XF86MonBrightnessUp
 	brightnessctl s +9
@@ -6,13 +18,29 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
 	brightnessctl s 9-
 
+# lock
+super + ctrl + l
+	xscreensaver-command --lock
+
 #
 # wm independent hotkeys
 #
 
 # terminal emulator
-super + Return
+super + t
 	kitty
+
+# firefox
+super + f
+	firefox
+
+# vivaldi
+super + i
+	vivaldi	
+
+# vscodium
+super + v
+	codium
 
 # program launcher
 super + @space
@@ -51,8 +79,8 @@ super + g
 #
 
 # set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+#super + {i,shift + i,s,f}
+#	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
@@ -83,10 +111,10 @@ super + {grave,Tab}
 	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
-super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
+#super + {o,i}
+#	bspc wm -h off; \
+#	bspc node {older,newer} -f; \
+#	bspc wm -h on
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
@@ -97,8 +125,8 @@ super + {_,shift + }{1-9,0}
 #
 
 # preselect the direction
-super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
+#super + ctrl + {h,j,k,l}
+#	bspc node -p {west,south,north,east}
 
 # preselect the ratio
 super + ctrl + {1-9}

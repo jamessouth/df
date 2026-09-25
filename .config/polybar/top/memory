@@ -1,0 +1,12 @@
+[module/memory]
+type = internal/memory
+
+interval = 1
+
+label = %{T2}%percentage_used%
+format-foreground = ${colors.yellow}
+format-prefix-foreground = ${colors.yellow}
+format-font = 1
+format-prefix = "mem "
+
+

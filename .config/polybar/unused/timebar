@@ -1,0 +1,16 @@
+[module/timebar]
+type = custom/script
+exec = ~/.config/polybar/timebar2/timebar
+
+tail = true
+format = <label>
+label = %{T1}%output%
+
+click-left = kill -1 %pid%
+click-right = kill -2 %pid%
+;scroll-up = kill -3 %pid%
+;scroll-down = kill -4 %pid%
+;double-click-left = kill -5 %pid%
+
+;double-click-right = kill -4 %pid%
+;double-click-middle = echo double middle %counter%

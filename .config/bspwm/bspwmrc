@@ -2,18 +2,22 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-xset r rate 250 50
-wc -l ~/.config/polybar/nldata | cut -d' ' -f1 > ~/.config/polybar/nlindex
+xset r rate 235 65
+#setxkbmap us -variant colemak_dh_ortho -option caps:swapescape
+echo "ind=0" > "${XDG_DATA_HOME:-$HOME/.local/share}/nightlight"
+echo "on=1" > "${XDG_DATA_HOME:-$HOME/.local/share}/bluetooth"
 /usr/bin/xscreensaver --no-splash &
 light-locker &
-~/.config/polybar/launch.sh
-nitrogen --restore
+~/.config/polybar/scripts/launch
+rotate_img_colors -- ~/Pictures/bgs/med.png
+sed -Ein -f ~/.config/bspwm/histclean.sed ~/.bash_history
+#~/.fehbg
 picom &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d a b c d e f g h i 
 
 bspc config border_width         0
-bspc config window_gap           30
+bspc config window_gap           20
 
 bspc config split_ratio          0.5
 bspc config borderless_monocle   true
@@ -21,6 +25,11 @@ bspc config gapless_monocle      true
 
 #bspc rule -a Gimp desktop='^8' state=floating follow=on
 #bspc rule -a Chromium desktop='^2'
-#bspc rule -a mplayer2 state=floating
 #bspc rule -a Kupfer.py focus=on
-#bspc rule -a Screenkey manage=off
+#bspc rule -a Zathura state=tiled
+#bspc rule -a firefox state=floating rectangle=1366x742+0+25
+
+
+#bspc rule -a C-evo-dh-gtk2 state=fullscreen
+bspc rule -a C-evo-dh-gtk2 state=floating
+

@@ -1,11 +1,15 @@
+
 configuration {
 	modi: "combi";
 	combi-modi: "drun,run";
 	show-icons: false;
-	theme: "/home/baldric/.config/rofi/theme.rasi";
 	run-shell-command: "kitty --hold {cmd}";
 	kb-row-tab: "Tab";
+	kb-element-next: "";
 	kb-row-select: "Control-space";
 //	kb-row-tab: "";
 //	kb-row-select: "Tab";
 }
+
+
+@theme "theme"

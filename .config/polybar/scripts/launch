@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+killall -q polybar
+
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+
+crontab -l > cronhold; polybar -q -c ~/.config/polybar/topconfig.ini topbar & jobs -p | xargs -I pid perl -pe "s/\d+(?= action nightlight)/pid/" cronhold | crontab; rm cronhold
+sleep 1
+polybar -q -c ~/.config/polybar/botconfig.ini botbar &

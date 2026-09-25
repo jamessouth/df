@@ -1,0 +1,27 @@
+[module/battery]
+type = internal/battery
+
+;full-at = 80
+battery = BAT0
+adapter = AC
+
+poll-interval = 8000
+time-format = %R
+
+label-charging = %{T1}%percentage%
+format-charging-font = 1
+format-charging-foreground = ${colors.base2}
+format-charging-background = ${colors.green}
+format-charging-padding = 4px
+
+label-discharging = %{T1}%percentage%
+format-discharging-font = 1
+format-discharging-foreground = ${colors.red}
+format-discharging-background = ${colors.base2}
+format-discharging-padding = 4px
+
+label-full = %{T4}%percentage%
+format-full-foreground = ${colors.orange}
+format-full-prefix-foreground = ${colors.orange}
+format-full-font = 1
+format-full-prefix = "bat "

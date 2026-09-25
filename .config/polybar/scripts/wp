@@ -1,0 +1,54 @@
+#!/bin/sh
+
+DIR="$1"
+INTERVAL="$2"
+WIDTH="$3"
+DELAY="$4"
+FIFO="/tmp/wallpaper_fifo_$$"
+
+sleep_pid=""
+pipe_pid=""
+zpid=""
+
+cleanup() {
+    trap - HUP INT TERM EXIT
+    
+    [ -n "$sleep_pid" ] && kill "$sleep_pid" 2>/dev/null
+    [ -n "$pipe_pid" ] && kill "$pipe_pid" 2>/dev/null
+    [ -n "$zpid" ] && kill "$zpid" 2>/dev/null
+    [ -p "$FIFO" ] && rm -f "$FIFO"
+    
+    exit 0
+}
+
+trap cleanup HUP INT TERM EXIT
+[ -p "$FIFO" ] || mkfifo "$FIFO" || exit 1
+cd "$DIR" || exit 1
+
+while true; do
+    printf '%s\n' ./* | shuf > "$FIFO" &
+    pipe_pid=$!
+
+    while IFS= read -r f; do
+	[ -e "$f" ] || continue
+        feh --bg-center "$f" >/dev/null 2>&1
+
+        if [ -n "$zpid" ]; then
+            kill "$zpid" 2>/dev/null
+            wait "$zpid" 2>/dev/null
+        fi
+
+        name=$(basename -- "$f" | sed -e 's/\.[^.]*$//' -e 's/_/ /g')
+        ~/.config/polybar/scripts/chyron.exe scroll $(printf '%s' "$name") -w "$WIDTH" -s "$DELAY" -p '|' -x '|' &
+        zpid=$!
+
+        sleep "$INTERVAL" &
+        sleep_pid=$!
+
+        wait "$sleep_pid"
+        sleep_pid=""
+    done < "$FIFO"
+    [ -n "$pipe_pid" ] && wait "$pipe_pid"
+done
+
+

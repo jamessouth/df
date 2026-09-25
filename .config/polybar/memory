@@ -1,9 +1,0 @@
-type = internal/memory
-
-interval = 8
-format-prefix = "mem "
-format-font = 1
-format-foreground = ${colors.dark-olive-green}
-label = %{T1}%percentage_used%%
-
-

@@ -1,0 +1,39 @@
+#!/bin/sh
+
+conf="${XDG_DATA_HOME:-$HOME/.local/share}/bluetooth"
+source "$conf"
+
+
+if [ "$on" -eq 1 ]; then
+	echo "%{F#dc322f}"
+	echo "on=0" > "$conf"
+	exit 0
+fi
+
+
+
+if systemctl is-active --quiet bluetooth.service; then
+	sudo systemctl stop bluetooth.service
+	while systemctl is-active --quiet bluetooth.service; do
+	    sleep 1
+	done
+	echo "%{F#dc322f}"
+
+	# You can now add your additional commands here.
+	# For example:
+	# bluetoothctl power on
+	# bluetoothctl connect AA:BB:CC:DD:EE:FF
+else
+	sudo systemctl start bluetooth.service
+	while ! systemctl is-active --quiet bluetooth.service; do
+	    sleep 1
+	done
+	echo "%{F#fdf6e3}"
+
+	# You can now add your additional commands here.
+	# For example:
+	# bluetoothctl power on
+	# bluetoothctl connect AA:BB:CC:DD:EE:FF
+fi
+
+

@@ -1,0 +1,29 @@
+[module/bspwm]
+type = internal/bspwm
+
+ws-icon-0 = a;A
+ws-icon-1 = b;R
+ws-icon-2 = c;C
+ws-icon-3 = d;H
+ws-icon-4 = e;L
+ws-icon-5 = f;I
+ws-icon-6 = g;N
+ws-icon-7 = h;U
+ws-icon-8 = i;X
+
+label-focused = %{T5}%icon%
+label-focused-foreground = ${colors.base3}
+label-focused-margin = 2px
+
+label-occupied = %{T5}%icon%
+label-occupied-foreground = ${colors.base02}
+label-occupied-margin = 2px
+
+label-empty = %{T5}%icon%
+label-empty-foreground = ${colors.base00}
+label-empty-margin = 2px
+
+label-urgent = %{T5}%icon%
+label-urgent-foreground = ${colors.red}
+label-urgent-margin = 2px
+

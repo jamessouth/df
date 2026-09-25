@@ -1,0 +1,9 @@
+[module/backlight]
+type = internal/backlight
+
+card = intel_backlight
+
+label = %{T2}%percentage%
+format-foreground = ${colors.cyan}
+format-prefix = "%{T1}bl "
+

@@ -1,0 +1,12 @@
+[module/wallpaper]
+type = custom/script
+
+;ARGS - directory, interval, chyron width, chyron delay
+exec = ~/.config/polybar/scripts/wp /home/baldric/Pictures/bgs 60 7 600
+
+tail = true
+
+format-foreground = ${colors.green}
+format-prefix = "%{T1}wp "
+label = %{T3}%output%
+

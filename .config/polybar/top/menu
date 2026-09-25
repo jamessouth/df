@@ -1,0 +1,26 @@
+[module/menu]
+type = custom/menu
+
+expand-right = false
+format-spacing = 0
+
+label-open = 
+label-open-foreground = ${colors.orange}
+label-open-font = 3
+label-close = 
+label-close-foreground = ${colors.orange}
+label-close-font = 3
+label-separator = |
+label-separator-foreground = ${colors.base00}
+label-separator-font = 3
+
+menu-0-0 = ⟳
+menu-0-0-font = 3
+menu-0-0-foreground = ${colors.orange}
+menu-0-0-exec = reboot
+
+menu-0-1 = ⏻
+menu-0-1-font = 3
+menu-0-1-foreground = ${colors.orange}
+menu-0-1-exec = shutdown now
+

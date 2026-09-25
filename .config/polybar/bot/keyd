@@ -1,0 +1,15 @@
+[module/keyd]
+type = custom/script
+
+# SC flags the awk expansion of $0 in single quotes, but this is a false positive
+# shellcheck disable=SC2016
+exec = sudo keyd listen | stdbuf -oL awk '{layout = substr($0,2,4);if (layout == "main"){print "Q"} else if (layout == "cole"){print "C"}}'
+
+tail = true
+
+format-foreground = ${colors.magenta}
+format-prefix-foreground = ${colors.magenta}
+format-font = 1
+format-prefix = "kbd "
+label-font = 1
+

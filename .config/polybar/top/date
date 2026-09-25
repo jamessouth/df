@@ -1,0 +1,9 @@
+[module/date]
+type = internal/date
+
+interval = 60
+
+;label-foreground = ${colors.cyan}
+label = %date%
+date = %%{T1}%{F#2aa198}%a %{F#268bd2}%b %{T4}%d
+
