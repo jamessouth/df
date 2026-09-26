@@ -1,0 +1,4 @@
+XDG_RUNTIME_DIR=/run/user/1000
+*/30 20-23,0-2 * * * polybar-msg -p 4294 action nightlight hook 1
+DISPLAY=:0
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus

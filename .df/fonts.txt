@@ -1,0 +1,78 @@
+Adobe Courier
+Adobe Helvetica
+Adobe New Century Schoolbook
+Adobe Times
+Adobe Utopia
+Adwaita Mono
+Adwaita Sans
+B&H Lucida
+B&H LucidaBright
+B&H LucidaTypewriter
+BinaryClock
+Bitstream Charter
+Bitstream Terminal
+C059
+Classic Console
+Cormorant Upright
+Cormorant Upright,Cormorant Upright Light
+Cormorant Upright,Cormorant Upright Medium
+Cormorant Upright,Cormorant Upright SemiBold
+D050000L
+DEC Terminal
+DejaVu Math TeX Gyre
+DejaVu Sans
+DejaVu Sans,DejaVu Sans Condensed
+DejaVu Sans,DejaVu Sans Light
+DejaVu Sans Mono
+DejaVu Serif
+DejaVu Serif,DejaVu Serif Condensed
+Eagle Lake
+Ewert
+Fira Code
+Fira Code,Fira Code Light
+Fira Code,Fira Code Medium
+Fira Code,Fira Code SemiBold
+FiraCode Nerd Font
+FiraCode Nerd Font,FiraCode Nerd Font Light
+FiraCode Nerd Font,FiraCode Nerd Font Med
+FiraCode Nerd Font,FiraCode Nerd Font Ret
+FiraCode Nerd Font,FiraCode Nerd Font SemBd
+FiraCode Nerd Font Mono
+FiraCode Nerd Font Mono,FiraCode Nerd Font Mono Light
+FiraCode Nerd Font Mono,FiraCode Nerd Font Mono Med
+FiraCode Nerd Font Mono,FiraCode Nerd Font Mono Ret
+FiraCode Nerd Font Mono,FiraCode Nerd Font Mono SemBd
+FiraCode Nerd Font Propo
+FiraCode Nerd Font Propo,FiraCode Nerd Font Propo Light
+FiraCode Nerd Font Propo,FiraCode Nerd Font Propo Med
+FiraCode Nerd Font Propo,FiraCode Nerd Font Propo Ret
+FiraCode Nerd Font Propo,FiraCode Nerd Font Propo SemBd
+Font Awesome 7 Brands
+Font Awesome 7 Free
+Font Awesome 7 Free,Font Awesome 7 Free Solid
+FreeMono
+FreeSans
+FreeSerif
+gallant12x22
+Gruppo
+Italianno
+Legrand
+Limelight
+Luxi Mono
+Manufacturing Consent
+Michroma
+mtx
+Nimbus Mono PS
+Nimbus Roman
+Nimbus Sans
+Nimbus Sans Narrow
+OCR A
+P052
+Pirata One
+Special Elite
+Standard Symbols PS
+UnifrakturCook
+URW Bookman
+URW Gothic
+Z003
+Zen Antique
