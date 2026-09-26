@@ -4,7 +4,6 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 xset r rate 235 65
 #setxkbmap us -variant colemak_dh_ortho -option caps:swapescape
-echo "ind=0" > "${XDG_DATA_HOME:-$HOME/.local/share}/nightlight"
 echo "on=1" > "${XDG_DATA_HOME:-$HOME/.local/share}/bluetooth"
 /usr/bin/xscreensaver --no-splash &
 light-locker &

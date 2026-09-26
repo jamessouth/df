@@ -1,41 +1,14 @@
 #!/usr/bin/env bash
 
-displays=(eDP-1)
-profiles=(
-	1:1:1
-	1:.97:.94
-	1:.93:.88
-	1:.90:.81
-	1:.86:.73
-	1:.82:.64
-	1:.77:.54
-	1:.71:.42
-	1:.68:.35
-	1:.64:.28
-	1:.59:.18
-	1:.54:.08
-	1:.32:.03
-	1:.18:.01
-)
+mapfile -t displays < <(xrandr | grep -w connected | awk '{print $1}')
 
-config="${XDG_DATA_HOME:-$HOME/.local/share}/$(basename "$0")"
+profiles=(1:1:1	1:.97:.94 1:.92:.88 1:.88:.81 1:.84:.73	1:.80:.65 1:.76:.57 1:.71:.49 1:.68:.41	1:.64:.33 1:.59:.25 1:.54:.17 1:.42:.13	1:.38:.08)
 
-# shellcheck source=/dev/null
-source "$config"
-
-len=${#profiles[@]}
-
-# shellcheck disable=SC2154
-case "$1" in
-	"+" )    new_ind=$((ind+1 > len-1 ? len-1 : ind+1));;
-	"-" )    new_ind=$((ind-1 < 0 ? 0 : ind-1));;
-esac
-
-new_prof="${profiles[$new_ind]}"
+icons=(              )
 
 for display in "${displays[@]}"; do
-	xrandr --output "$display" --gamma "${new_prof}"
+	xrandr --output "$display" --gamma "${profiles[$1]}"
 done
 
-echo "ind=${new_ind}" > "$config"
-echo "${new_prof}"
+echo "${icons[$1]}"
+
