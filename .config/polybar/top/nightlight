@@ -1,11 +1,9 @@
 [module/nightlight]
 type = custom/ipc
 
+label = %{T3}%output%
 format-foreground = ${colors.blue}
-format-prefix-foreground = ${colors.blue}
-format-font = 1
-label-font = 4
-format-prefix = "nl "
+format-prefix = "%{T1}nl "
 
 hook-0 = ~/.config/polybar/scripts/nightlight 0
 hook-1 = ~/.config/polybar/scripts/nightlight 1

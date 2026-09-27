@@ -8,8 +8,6 @@ exec = sudo keyd listen | stdbuf -oL awk '{layout = substr($0,2,4);if (layout ==
 tail = true
 
 format-foreground = ${colors.magenta}
-format-prefix-foreground = ${colors.magenta}
-format-font = 1
-format-prefix = "kbd "
-label-font = 1
+format-prefix = "%{T1}kbd "
+label = %{T1}%output%
 

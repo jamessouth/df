@@ -11,3 +11,4 @@ click-right = #killswitch.hook.2
 format-foreground = ${colors.yellow}
 format-prefix = "%{T1}ks "
 label = %{T2}%output%
+

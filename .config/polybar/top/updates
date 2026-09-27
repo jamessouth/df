@@ -3,12 +3,8 @@ type = custom/script
 
 exec = ~/.config/polybar/scripts/udscript
 interval = 43200
-format = <label>
 
 label = %{T2}%output%
 format-foreground = ${colors.violet}
-format-prefix-foreground = ${colors.violet}
-format-font = 1
-format-prefix = "ud "
-
+format-prefix = "%{T1}ud "
 

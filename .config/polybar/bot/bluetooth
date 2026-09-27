@@ -6,6 +6,6 @@ click-left = "#bluetooth.hook.0"
 initial = 1
 
 format-foreground = ${colors.red}
-format-font = 1
-label = bt %output%
-label-font = 1
+format-prefix = "%{T1}bt "
+label = %{T2}%output%
+

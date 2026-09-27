@@ -5,8 +5,5 @@ interval = 1
 
 label = %{T2}%percentage%
 format-foreground = ${colors.green}
-format-prefix-foreground = ${colors.green}
-format-font = 1
-format-prefix = "cpu "
-
+format-prefix = "%{T1}cpu "
 
