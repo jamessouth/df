@@ -23,4 +23,3 @@ wm-restack = bspwm
 override-redirect = true
 cursor-click = pointer
 
-

@@ -7,4 +7,5 @@ format-volume-prefix = "%{T1}vol "
 
 label-muted = %{T2}%percentage%
 format-muted-foreground = ${colors.red}
+format-muted-prefix = "%{T1}vol "
 
