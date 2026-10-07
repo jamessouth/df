@@ -1,0 +1,9 @@
+[module/cpu]
+type = internal/cpu
+
+interval = 1
+
+label = %{T2}%percentage%
+format-foreground = ${colors.green}
+format-prefix = "%{T1}cpu "
+

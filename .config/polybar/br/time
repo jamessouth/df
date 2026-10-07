@@ -1,0 +1,9 @@
+[module/time]
+type = internal/date
+
+interval = 1
+
+label = %time%
+time = %%{T2}%{F#6c71c4}%H%{F#d33682}%M%{F#dc322f}%S
+time-alt = %%{T4}%{F#6c71c4}%H%{F#657b83}:%{F#d33682}%M%{F#657b83}:%{F#dc322f}%S
+
