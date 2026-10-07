@@ -5,23 +5,11 @@ label = %{T3}%output%
 format-foreground = ${colors.blue}
 format-prefix = "%{T1}nl "
 
-hook-0 = ~/.config/polybar/scripts/nightlight 0
-hook-1 = ~/.config/polybar/scripts/nightlight 1
-hook-2 = ~/.config/polybar/scripts/nightlight 2
-hook-3 = ~/.config/polybar/scripts/nightlight 3
-hook-4 = ~/.config/polybar/scripts/nightlight 4
-hook-5 = ~/.config/polybar/scripts/nightlight 5
-hook-6 = ~/.config/polybar/scripts/nightlight 6
-hook-7 = ~/.config/polybar/scripts/nightlight 7
-hook-8 = ~/.config/polybar/scripts/nightlight 8
-hook-9 = ~/.config/polybar/scripts/nightlight 9
-hook-10 = ~/.config/polybar/scripts/nightlight 10
-hook-11 = ~/.config/polybar/scripts/nightlight 11
-hook-12 = ~/.config/polybar/scripts/nightlight 12
-hook-13 = ~/.config/polybar/scripts/nightlight 13
+hook-0 = echo "0" > /dev/shm/nightlight && echo "" 
+hook-1 = ~/.config/polybar/scripts/nightlight -
+hook-2 = ~/.config/polybar/scripts/nightlight +
 
-initial = 1
-
-scroll-up = #nightlight.prev
-scroll-down = #nightlight.next
+initial = 0
+scroll-up = "#nightlight.hook.1"
+scroll-down = "#nightlight.hook.2"
 

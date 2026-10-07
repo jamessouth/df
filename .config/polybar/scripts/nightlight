@@ -6,9 +6,19 @@ profiles=(1:1:1	1:.97:.94 1:.92:.88 1:.88:.81 1:.84:.73	1:.80:.65 1:.76:.57 1:.7
 
 icons=(              )
 
+len=${#profiles[@]}
+
+I=$(cat /dev/shm/nightlight)
+
+case "$1" in
+	"+" )    IND=$((I+1 > len-1 ? len-1 : I+1));;
+	"-" )    IND=$((I-1 < 0 ? 0 : I-1));;
+esac
+
 for display in "${displays[@]}"; do
-	xrandr --output "$display" --gamma "${profiles[$1]}"
+	xrandr --output "$display" --gamma "${profiles[$IND]}"
 done
 
-echo "${icons[$1]}"
+echo "$IND" > /dev/shm/nightlight
+echo "${icons[$IND]}"
 

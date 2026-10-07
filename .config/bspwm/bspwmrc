@@ -1,12 +1,12 @@
-#! /bin/sh
+#!/usr/bin/env bash
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 xset r rate 235 65
 #setxkbmap us -variant colemak_dh_ortho -option caps:swapescape
-echo "on=1" > "${XDG_DATA_HOME:-$HOME/.local/share}/bluetooth"
 /usr/bin/xscreensaver --no-splash &
 light-locker &
+~/.config/polybar/scripts/loadicons
 ~/.config/polybar/scripts/launch
 rotate_img_colors -- ~/Pictures/bgs/med.png
 sed -Ein -f ~/.config/bspwm/histclean.sed ~/.bash_history

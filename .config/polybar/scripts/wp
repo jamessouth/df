@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 DIR="$1"
 INTERVAL="$2"
@@ -32,6 +32,11 @@ while true; do
     while IFS= read -r f; do
 	[ -e "$f" ] || continue
         feh --bg-center "$f" >/dev/null 2>&1
+
+	btcolor=$(magick "$f" -crop 20x20+1080+0 -scale 1x1\! -channel RGB -negate -format "#%[hex:p{0,0}]\n" info:)
+	echo "$btcolor" > /dev/shm/bluetooth/color
+	polybar-msg -p $(cat /dev/shm/topbarpid) action bluetooth send "%{F$btcolor}%{T1}bt %{T3}$(cat /dev/shm/bluetooth/icon)"
+	#polybar-msg -p 11364 action bluetooth send "%{F$btcolor}%{T1}bt %{T3}$(cat /dev/shm/bluetooth/icon)"
 
         if [ -n "$zpid" ]; then
             kill "$zpid" 2>/dev/null

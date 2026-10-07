@@ -123,3 +123,73 @@ If you prefer the zero-script approach for styling your workspaces, let me know:
 
 
 
+
+
+
+Using /dev/shm is identical to how you were writing to $XDG_CACHE_HOME or $XDG_CONFIG_HOME, except it targets a virtual memory filesystem instead of your physical storage drive.
+Because /dev/shm mounts directly to your system's volatile RAM, file operations happen near-instantaneously with zero wear on your SSD.
+Here is how to modify your Polybar module and script to read, calculate, and store the index inside /dev/shm.
+## 1. The Dynamic Script (~/.config/polybar/scripts/nightlight)
+We will rewrite your script so it can accept an action argument (up, down, or a raw hook index number). It will track the index inside a small state file at /dev/shm/nl_index.
+
+#!/usr/bin/env bash
+# 1. Configuration Arrays
+profiles=(1:1:1 1:.97:.94 1:.92:.88 1:.88:.81 1:.84:.73 1:.80:.65 1:.76:.57 1:.71:.49 1:.68:.41 1:.64:.33 1:.59:.25 1:.54:.17 1:.42:.13 1:.38:.08)
+icons=(             )
+MAX_INDEX=$((${#profiles[@]} - 1))
+# 2. Initialize or Read current index from RAM
+STATE_FILE="/dev/shm/nl_index"if [ ! -f "$STATE_FILE" ]; then
+    echo "0" > "$STATE_FILE"fi
+CURRENT_IDX=$(cat "$STATE_FILE")
+# 3. Determine new index based on scroll direction or explicit hookif [ "$1" == "up" ]; then
+    NEW_IDX=$((CURRENT_IDX + 1))
+    [ $NEW_IDX -gt $MAX_INDEX ] && NEW_IDX=0elif [ "$1" == "down" ]; then
+    NEW_IDX=$((CURRENT_IDX - 1))
+    [ $NEW_IDX -lt 0 ] && NEW_IDX=$MAX_INDEXelse
+    # Fallback for explicit hooks (like startup initialization loops)
+    NEW_IDX=${1:-0}fi
+# Save the new state back to RAM instantly
+echo "$NEW_IDX" > "$STATE_FILE"
+# 4. Instantly print icon to standard output so Polybar never blocks
+echo "${icons[$NEW_IDX]}"
+# 5. Sever the slow xrandr communication completely using setsid
+setsid bash -c '
+    mapfile -t displays < <(xrandr | grep -w connected | grep -E "[0-9]+x[0-9]+" | awk "{print \$1}")
+    for display in "${displays[@]}"; do
+        if [ -n "$display" ]; then
+            xrandr --output "$display" --gamma "'"${profiles[$NEW_IDX]}"'"
+        fi
+    done
+' >/dev/null 2>&1 &
+
+------------------------------
+## 2. The Updated Polybar Module Configuration
+With the file tracking completely handed off to RAM via the script logic, you no longer need 14 separate structural hooks inside your config.ini. You only need a couple of control nodes.
+This drastically shrinks your module footprint, eliminating the complex hook bootstrapping race conditions that were causing your startup freezes:
+
+[module/nightlight]
+type = custom/ipc
+
+# Hook-0 is your startup safe zone. It triggers index 0 cleanly.
+hook-0 = ~/.config/polybar/scripts/nightlight 0
+
+# Hook-1 handles scrolling events dynamically
+hook-1 = ~/.config/polybar/scripts/nightlight up
+hook-2 = ~/.config/polybar/scripts/nightlight down
+
+# Safe boot setup
+initial = 1
+
+# Scroll targets call the dynamic action arguments directly
+scroll-up = "#nightlight.hook.1"
+scroll-down = "#nightlight.hook.2"
+
+format-foreground = ${colors.blue}
+format-prefix = "nl "
+
+## Why this stops the startup freeze
+When Polybar boots up with your old configuration, it attempts to load all 14 hook environments into its process pool memory blocks at the exact same millisecond. If xrandr requests bottlenecked during display server initialization, it corrupted the IPC socket channels.
+By flattening the setup down to one script that handles the state via RAM calculations, Polybar's initialization routines execute completely unhindered.
+Let me know how this configuration tests out tomorrow! If your other IPC modules still freeze during startup, we can check your core Polybar boot script to see if adding an asynchronous fork pattern (&) there cleans it up completely.
+
+
