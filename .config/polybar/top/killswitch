@@ -1,0 +1,13 @@
+[module/killswitch]
+type = custom/ipc
+
+label = %{T2}%output%
+format-foreground = ${colors.yellow}
+format-prefix = "%{T1}ks "
+
+hook-0 = echo "%{F#b58900}✓"
+hook-1 = sudo /home/baldric/Documents/polybar-internet-killswitch/killswitch
+
+initial = 0
+click-left = "#killswitch.hook.1"
+

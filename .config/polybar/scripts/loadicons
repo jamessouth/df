@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+echo "" > /dev/shm/bluetooth_icon
+echo "" > /dev/shm/tv_icon
+
+
+

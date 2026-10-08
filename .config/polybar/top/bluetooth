@@ -1,0 +1,7 @@
+[module/bluetooth]
+type = custom/ipc
+
+hook-0 = ~/.config/polybar/scripts/bluetooth
+
+click-left = "#bluetooth.hook.0"
+

@@ -24,6 +24,7 @@ else
 	# bluetoothctl connect AA:BB:CC:DD:EE:FF
 fi
 
-echo ${icon} > /dev/shm/bluetooth_icon
+echo ${icon} > /dev/shm/bluetooth_icon_tmp
+mv /dev/shm/bluetooth_icon_tmp /dev/shm/bluetooth_icon
 echo "%{F$(cat /dev/shm/bluetooth_color)}%{T1}bt %{T3}${icon}" 
 

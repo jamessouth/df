@@ -1,0 +1,13 @@
+[module/ping]
+type = custom/ipc
+
+label = %{T2}%output%
+format-foreground = ${colors.orange}
+format-prefix = "%{T1}png "
+
+hook-0 = echo "↑" 
+hook-1 = ping -c 1 -W 2 8.8.8.8 >/dev/null 2>&1 && printf '↑\\n' || printf '↓\\n'
+
+initial = 0
+click-left = "#ping.hook.1"
+

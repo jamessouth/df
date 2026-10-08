@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+if [[ "$1" == "laptop" ]]; then
+	xrandr --output eDP-1 --auto --output HDMI-1 --off
+	icon="" 
+elif [[ "$1" == "tv" ]]; then
+	xrandr --output HDMI-1 --mode 1360x768 --pos 3x0 --output eDP-1 --off
+	icon="󱄄" 
+else
+	xrandr --output eDP-1 --auto --output HDMI-1 --mode 1360x768 --pos 3x0
+	icon="" 
+fi
+
+echo ${icon} > /dev/shm/tv_icon_tmp
+mv /dev/shm/tv_icon_tmp /dev/shm/tv_icon
+echo "%{F$(cat /dev/shm/tv_color)}%{T1}tv %{T3}${icon}" 
+

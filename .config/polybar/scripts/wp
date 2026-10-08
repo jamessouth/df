@@ -34,15 +34,17 @@ while true; do
         feh --bg-center "$f" >/dev/null 2>&1
 
 	btcolor=$(magick "$f" -crop 20x20+1080+0 -scale 1x1\! -channel RGB -negate -format "#%[hex:p{0,0}]\n" info:)
-	echo "$btcolor" > /dev/shm/bluetooth_color
-	polybar-msg -p $(cat /dev/shm/topbarpid) action bluetooth send "%{F$btcolor}%{T1}bt %{T3}$(cat /dev/shm/bluetooth_icon)"
-	#polybar-msg -p 11364 action bluetooth send "%{F$btcolor}%{T1}bt %{T3}$(cat /dev/shm/bluetooth_icon)"
+	echo "$btcolor" > /dev/shm/bluetooth_color_tmp
+	mv /dev/shm/bluetooth_color_tmp /dev/shm/bluetooth_color
+	#polybar-msg -p $(cat /dev/shm/topbarpid) action bluetooth send "%{F$btcolor}%{T1}bt %{T3}$(cat /dev/shm/bluetooth_icon)"
+	polybar-msg -p 12426 action bluetooth send "%{F$btcolor}%{T1}bt %{T3}$(cat /dev/shm/bluetooth_icon)"
 
 
 	tvcolor=$(magick "$f" -crop 20x20+1100+0 -scale 1x1\! -channel RGB -negate -format "#%[hex:p{0,0}]\n" info:)
-	echo "$tvcolor" > /dev/shm/tv_color
-	polybar-msg -p $(cat /dev/shm/topbarpid) action tv send "%{F$tvcolor}%{T1}tv %{T3}$(cat /dev/shm/tv_icon)"
-	#polybar-msg -p 11364 action tv send "%{F$tvcolor}%{T1}tv %{T3}$(cat /dev/shm/tv_icon)"
+	echo "$tvcolor" > /dev/shm/tv_color_tmp
+	mv /dev/shm/tv_color_tmp /dev/shm/tv_color
+	#polybar-msg -p $(cat /dev/shm/topbarpid) action tv send "%{F$tvcolor}%{T1}tv %{T3}$(cat /dev/shm/tv_icon)"
+	polybar-msg -p 12426 action tv send "%{F$tvcolor}%{T1}tv %{T3}$(cat /dev/shm/tv_icon)"
 
 
 

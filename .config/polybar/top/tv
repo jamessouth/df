@@ -1,0 +1,10 @@
+[module/tv]
+type = custom/ipc
+
+hook-0 = ~/.config/polybar/scripts/tv 'tv'
+hook-1 = ~/.config/polybar/scripts/tv 'both'
+hook-2 = ~/.config/polybar/scripts/tv 'laptop'
+
+click-left = "#tv.next"
+click-right = "#tv.prev"
+
